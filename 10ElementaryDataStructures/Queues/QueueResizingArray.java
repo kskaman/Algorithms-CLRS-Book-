@@ -89,7 +89,10 @@ public class QueueResizingArray<T> implements Iterable<T> {
      */
     public void enqueue(T t) {
          
-        if (count == MAX) resize(2*MAX);
+        if (count == MAX) {
+            resize(2*MAX);
+            MAX = 2*MAX;
+        }
          
         arr[last++] = t;
         count++;
@@ -167,7 +170,7 @@ public class QueueResizingArray<T> implements Iterable<T> {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        QueueArray<Integer> queue = new QueueArray<Integer>(20);
+        QueueResizingArray<Integer> queue = new QueueResizingArray<Integer>();
   
         System.out.println(queue.isEmpty());
         queue.enqueue(20);
