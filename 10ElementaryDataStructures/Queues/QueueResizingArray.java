@@ -1,6 +1,6 @@
 /******************************************************************************
- *  Compilation:    javac QueueArray.java
- *  Execution:      java QueueArray
+ *  Compilation:    javac QueueResizingArray.java
+ *  Execution:      java QueueResizingArray
  *  Dependencies:   None
  *  Data files:     None
  *

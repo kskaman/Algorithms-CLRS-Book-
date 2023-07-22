@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:    javac Queue.java
- *  Execution:      java Queue < input.txt
+ *  Execution:      java Queue
  *  Dependencies:   None
  *  Data files:     None
  *
