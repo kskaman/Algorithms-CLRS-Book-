@@ -1,13 +1,13 @@
 
 /**************************************************************************************
- * Compilation:     javac StackArray.java 
- * Execution:       java StackArray
+ * Compilation:     javac Stack.java 
+ * Execution:       java Stack
  * Dependencies:    None
  * Data Files:      None
  * @author Kamanpreet Singh Manoor
  * A generic stack, implemented using an Link class . Each stack element is of certain type.
  * 
- * % java StackArray
+ * % java Stack
  * true
  * false
  *

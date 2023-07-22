@@ -1,3 +1,22 @@
+/**************************************************************************************
+ * Compilation:     javac StackResizingArray.java 
+ * Execution:       java StackResizingArray
+ * Dependencies:    None
+ * Data Files:      None
+ * @author Kamanpreet Singh Manoor
+ * A generic stack, implemented using an array . Each stack element is of certain type.
+ * 
+ * % java StackResizingArray
+ * true
+ * false
+ *
+ * Stack : 67 45 34 11 20
+ * 67
+ * 45
+
+ * Stack : 45 34 11 20
+ **************************************************************************************/
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
