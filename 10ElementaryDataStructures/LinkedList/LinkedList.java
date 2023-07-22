@@ -1,6 +1,3 @@
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
 /******************************************************************************
  *  Compilation:    javac LinkedList.java
  *  Execution:      java LinkedList
@@ -8,16 +5,30 @@ import java.util.NoSuchElementException;
  *  Data files:     None
  *  @author Kamanpreet Singh Manoor
  *
- *  % 
+ *  % java LinkedList
+ * true
+ * 3
+ * false
+ * 6
+ * My name is Kamanpreet Sinh Manoor
+ * 'Kaman' is not present in the list.
+ * 
+ * My name is Kaman Preet Singh Manoor
+ * My name is Kaman Preet Singh Manoor
+ * 
+ * My name is Kaman Preet
  ******************************************************************************/
 
-public class LinkedList<T> implements Iterable {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class LinkedList<T> implements Iterable<T> {
 
     private Link<T> head;    // Link at the beginning of the list
     private int count;    // number of elements in List
 
     // helper Link class
-    private class Link<T> {
+    private static class Link<T> {
         private T key;
         private Link<T> next;
 
@@ -54,6 +65,7 @@ public class LinkedList<T> implements Iterable {
      * @param the key to be inserted
      */
     public void insert(T t) {
+    
         Link<T> newLink = new Link<>(t);
         count++;
         if (head == null) {
@@ -227,7 +239,6 @@ public class LinkedList<T> implements Iterable {
 
     /**
      * Returns a string representation of this LinkedList.
-     *
      * @return the sequence of items in FIFO order, separated by spaces
      */
     public String toString() {
@@ -236,6 +247,7 @@ public class LinkedList<T> implements Iterable {
         
         while (current != null) {
             sb.append(current.key + " ");
+            current = current.next;
         }
         return sb.toString();
     }
@@ -257,7 +269,7 @@ public class LinkedList<T> implements Iterable {
         }
 
         public boolean hasNext() {
-            return current.next != null;
+            return current != null;
         }
 
         public T next() {
@@ -289,18 +301,34 @@ public class LinkedList<T> implements Iterable {
         System.out.println(name.size());
 
         System.out.println(name);
-        name.replace('Sinh', 'Singh');
-        int i = name.search('Kaman');
+        name.replace("Sinh", "Singh");
+        int i = name.search("Kaman");
         if (i == -1) {
-            System.out.println("'Kaman' is not present in the list.")
+            System.out.println("'Kaman' is not present in the list.");
         }
 
-        int i = name.search('Kamanpreet');
+        i = name.search("Kamanpreet");
         if (i == -1) {
-            System.out.println("'Kamanpreet' is not present in the list.")
+            System.out.println("'Kamanpreet' is not present in the list.");
         } else {
-            name.replace()
+            name.replace(i, "Kaman");
         }
+        name.insert(i+1, "Preet");
 
+        System.out.println();
+        for (String s : name) {
+            System.out.print(s + " ");
+        }
+        System.out.println();
+
+        System.out.println(name);
+        name.delete(i+2);
+        name.delete("Manoor");
+
+        System.out.println();
+        for (String s : name) {
+            System.out.print(s + " ");
+        }
+        System.out.println();
     }
 }
