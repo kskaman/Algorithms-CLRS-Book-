@@ -195,9 +195,9 @@ public class LinkedList<T> implements Iterable<T> {
     public void delete(T t) {
         if (count == 0) throw new NoSuchElementException("List is empty. Cannot delete from an empty list.");
 
-        count--;
         if (head.key == t) {
             head = head.next;
+            count--;
             return;
         }
 
@@ -206,6 +206,7 @@ public class LinkedList<T> implements Iterable<T> {
         while (current != null) {
             if (current.key == t) {
                 prev.next = current.next;
+                count--;
                 return;
             }
             prev = current;
@@ -219,7 +220,7 @@ public class LinkedList<T> implements Iterable<T> {
      * @param index
      */
     public void delete(int index) {
-        if (index >= count) throw new NoSuchElementException("Index put of range.");
+        if (index >= count) throw new NoSuchElementException("Index out of range.");
 
         count--;
         if (index == 0) {
